@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5154ff;
+  color: #fff;
+  padding: 10px 30px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-links {
+    width: 60%;
+  }
+
+  .nav-links li {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    background-color: #333;
+    height: 100vh;
+    top: 60px;
+    right: 0px;
+    width: 200px;
+    padding: 0px;
+    z-index: 2;
+    transition: transform 0.5s ease-in;
+    transform: translateX(200px);
+  }
+
+  .nav-links a {
+    text-align: center;
+    padding: 10px;
+    display: block;
+    font-size: 16px;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.container {
+  max-width: 1200px; /* En fazla genişlik 1200 piksel olacak. */
+  margin: 0 auto; /* Sol ve sağ kenar boşluğu eşit olacak. */
+  padding: 20px; /* İçeriklerin kenar boşlukları 20 piksel olacak. */
+}
+
+.row {
+  display: flex; /* Satırlar yatayda genişleyecek ve çıktıda yan yana görünecek. */
+  justify-content: space-between; /* Öğeler arasında eşit boşluk olacak. */
+  border: 1px solid #ccc; /* Kenarlık rengi gri olacak. */
+  padding: 10px; /* Kenar boşlukları 10 piksel olacak. */
+}
+
+.slider {
+  white-space: nowrap; /* İçerikler bir arada olacak, satır atlama yapılmayacak. */
+  overflow-x: auto; /* Yatay aşırı akış için kaydırma çubuğu gösterilecek. */
+  -webkit-overflow-scrolling: touch; /* IOS cihazlarında pürüzsüz kaydırma sağlayacak. */
+}
+
+.slide {
+  display: inline-block; /* Diğer öğelerin yanına yan yana eklenecek. */
+  width: 300px; /* Öğelerin genişliği 400 piksel olacak. */
+  margin-right: 10px; /* Öğeler arasında 10 piksel boşluk olacak. */
+  vertical-align: top; /* Öğeler yukarı hizalanacak. */
+  position: relative; /* İçerikler göreli olarak pozisyonlandırılacak. */
+}
+
+.slide img {
+  width: 100%; /* Resimlerin genişliği %100 olacak ve öğeyle aynı genişliğe sahip olacak. */
+  height: auto; /* Yüksekliği otomatik olarak ayarlanacak. */
+  cursor: pointer; /* Fare imleci değişecek ve tıklanabilir olduğunu belirtecek. */
+  transition: filter 0.5s ease-in-out; /* Filtre geçişleri 0.5 saniyede yumuşakça gerçekleşecek. */
+}
+
+.slide img:hover {
+  filter: brightness(30%); /* Fare imleci resmin üzerine geldiğinde, resmin parlaklığı %30 azalacak. */
+}
+
+.slide p {
+  font-size: 20px; /* Paragraf boyutu 20 piksel olacak. */
+  max-width: 100%; /* Maksimum genişlik %100 olacak. */
+  overflow: hidden; /* Taşan kısımlar gizlenecek. */
+  text-overflow: ellipsis; /* Taşan kısımlar noktalama işareti ile gösterilecek. */
+  white-space: nowrap; /* Paragraf bir arada olacak, satır atlama yapılmayacak. */
+  font-family: Arial, sans-serif; /* Font ailesi Arial veya benzeri sans-serif olacak. */
+}
+
+.btn {
+  position: absolute; /* Butonlar diğer öğelerin üzerine bindirilecek. */
+  top: 50%; /* Dikey olarak ortalanacak. */
+  transform: translateY(-50%); /* Dikey olarak ortalanacak. */
+  font-size: 24px; /* Buton yazı boyutu 24 piksel olacak. */
+  cursor: pointer; /* Fare imleci değişecek ve tıklanabilir olduğunu belirtecek. */
+  z-index: 1; /* Butonlar diğer öğelerin üzerinde görünecek. */
+}
+
+.btn-right {
+  right: 0; /* Sağa yaslanacak. */
+}
+
+.btn-left {
+  left: 0; /* Sola yaslanacak. */
+}
+
+.header {
+  position: relative; /* Başlık göreli olarak pozisyonlandırılacak. */
+}
+
+.header:before {
+  content: ""; /* Boş içerik ekleniyor. */
+  position: absolute; /* Diğer öğelerin üzerine bindirilecek. */
+  top: 0; /* En üstte başlayacak. */
+}
